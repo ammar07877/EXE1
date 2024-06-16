@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موقع تجريبي</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <div class="header-left">
+        <span>EXE</span>
+    </div>
+    <div class="header-right">
+        <div class="nav-buttons">
+            <a href="#" onclick="navigateHome()">الرئيسية</a>
+            <a href="#" onclick="navigateChannel()">قناتي</a>
+            <a href="#" onclick="navigateContact()">اتصل بي</a>
+        </div>
+        <div class="burger-menu" onclick="toggleMenu()">☰</div>
+        <div class="dropdown-menu" id="dropdownMenu">
+            <button onclick="navigateHome()">الرئيسية</button>
+            <button onclick="navigateChannel()">قناتي</button>
+            <button onclick="navigateContact()">اتصل بي</button>
+        </div>
+    </div>
+</header>
+
+<main>
+    <h1>AI</h1>
+    <h2 class="ai-text">موقع تجريبي</h2>
+    <div class="about">
+        <h2>من أنا</h2>
+        <p>مرحبا انا عمار ، مبرمج مبتدىء وهذا الموقع تمت صناعته بمساعدة الذكاء الاصتناعي</p>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2024 - جميع الحقوق محفوظة. <span class="contact-info">للاعلان على الموقع <a href="mailto:ammarexe0@gmail.com">ammarexe0@gmail.com</a></span></p>
+</footer>
+
+<script>
+    function toggleMenu() {
+        var menu = document.getElementById("dropdownMenu");
+        if (menu.style.display === "none" || menu.style.display === "") {
+            menu.style.display = "flex";
+        } else {
+            menu.style.display = "none";
+        }
+    }
+
+    function navigateHome() {
+        window.location.href = "index.html";
+    }
+
+    function navigateChannel() {
+        window.location.href = "https://www.youtube.com/channel/UCLbwKNhLtwJgbju4HtUcQFA";
+    }
+
+    function navigateContact() {
+        window.location.href = "https://www.instagram.com/alstor.exe/";
+    }
+</script>
+
+</body>
+</html>

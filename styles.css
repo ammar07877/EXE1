@@ -1,0 +1,180 @@
+/* أساسيات الصفحة */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* تأكيد أن الصفحة تمتلك الحد الأدنى من الطول بالشاشة */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 10px 20px;
+    color: red;
+}
+
+.header-left {
+    color: red;
+    font-size: 28px; /* تكبير حجم كلمة EXE قليلاً */
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    position: relative; /* لتمكين وضع القائمة المنسدلة */
+}
+
+.nav-buttons {
+    display: none; /* إخفاء الأزرار بشكل افتراضي */
+}
+
+.nav-buttons a {
+    text-decoration: none;
+    color: red;
+    margin-left: 20px;
+    font-size: 16px;
+    position: relative; /* لتفعيل وضع الخط */
+}
+
+.nav-buttons a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px; /* سمك الخط */
+    background: red; /* لون الخط */
+    transition: width .3s;
+    position: absolute;
+    left: 0;
+    bottom: -3px; /* المسافة بين النص والخط */
+}
+
+.nav-buttons a:hover::after {
+    width: 100%; /* توسيع الخط إلى عرض النص بالكامل عند التمرير */
+}
+
+.burger-menu {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 40px; /* تحديد المسافة بين القائمة العلوية والقائمة المنسدلة */
+    right: 0;
+    background-color: white;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-menu button {
+    width: 100%;
+    padding: 12px 16px;
+    text-align: right;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.dropdown-menu button:hover {
+    background-color: #f1f1f1;
+}
+
+main {
+    flex: 1; /* يمتد لملء المساحة المتبقية من الصفحة */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* ترتيب المحتوى بشكل عمودي في المساحات الصغيرة */
+    background-color: #660000; /* تعديل لون الخلفية إلى اللون الأحمر المائل للأسود */
+    color: black;
+    padding: 20px;
+    text-align: center;
+}
+
+main h1 {
+    font-size: 36px; /* حجم النص الأصغر لكلمة "AI" */
+    color: red; /* لون النص الأصلي */
+}
+
+.ai-text {
+    font-size: 48px; /* حجم كلمة "موقع تجريبي" المكبر */
+    color: red; /* لون كلمة "موقع تجريبي" بالأحمر */
+    margin-top: 10px; /* تحديد التباعد العلوي لكلمة "موقع تجريبي" */
+}
+
+.about {
+    background-color: #660000; /* تعديل لون الخلفية إلى اللون الأحمر المائل للأسود */
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.about h2 {
+    font-size: 24px;
+    color: red;
+}
+
+.about p {
+    font-size: 20px; /* تكبير الخط قليلاً */
+    color: white;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: white;
+    color: red;
+    margin-top: 20px; /* إضافة مسافة بين القسم "من أنا" والفوتر */
+}
+
+.contact-info {
+    display: block;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.contact-info a {
+    color: red;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* وسائط الاستجابة */
+@media (max-width: 768px) {
+    .nav-buttons {
+        display: none; /* إخفاء الأزرار في الشاشات الصغيرة */
+    }
+
+    .burger-menu {
+        display: block; /* إظهار البيرجر مينيو في الشاشات الصغيرة */
+    }
+
+    .dropdown-menu {
+        position: absolute;
+        right: 0;
+    }
+
+    .dropdown-menu button {
+        width: auto;
+    }
+}
+
+@media (min-width: 769px) {
+    .nav-buttons {
+        display: flex; /* إظهار الأزرار في الشاشات الكبيرة */
+    }
+
+    .burger-menu {
+        display: none; /* إخفاء البيرجر مينيو في الشاشات الكبيرة */
+    }
+}
+
